@@ -1,0 +1,85 @@
+
+
+
+<html>
+<head>
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+    }
+  </style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" [routerLink]="'list'">Home</a></li>
+  <li><a routerLink="list/employee/add/0">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+</body>
+</html>
+
+
+<div>
+  <h2>{{header}}</h2>
+
+</div>
+<!--<div>
+  <form [formGroup]= "form" >
+    <div >id :<input formControlName="id" ></div>
+    <div >name :<input formControlName="name" ></div>
+    <div >email :<input formControlName="email" ></div>
+    <div >phone :<input formControlName="phone" ></div>
+<div>
+  <button type="submit">save </button>
+</div>
+  </form>
+</div>-->
+<form [formGroup]="form"  (ngSubmit)="empl.sumbit(form.value) " #f="ngForm">
+  <div>
+    <label>id</label>
+    <input type="text" class="form-control" formControlName="id" ngModel name="id">
+  </div>
+
+  <div>
+    <label>Name</label>
+    <input type="text" class="form-control" formControlName="name" ngModel name="name">
+  </div>
+
+  <div>
+    <label>Email</label>
+    <input type="text" class="form-control" formControlName="email" ngModel name="email">
+  </div>
+
+  <div>
+    <label>Phone</label>
+    <input type="text" class="form-control" formControlName="phone" ngModel name="phone">
+  </div>
+
+  <div>
+
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">save</button>
+  </div>
+</form>

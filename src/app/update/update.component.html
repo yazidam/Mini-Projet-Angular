@@ -1,0 +1,34 @@
+<p>update works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="container">
+    <div class="col-12">
+      <div class="form-group text-center">
+        <br><h5>modifier employe</h5>
+      </div>
+
+
+      <div class="form-group">
+        <h3>ID:</h3>
+        <input class="form-control" formControlName="id" type="text" placeholder="id" >
+      </div>
+      <div class="form-group">
+        <h3>Name:</h3>
+        <input class="form-control" formControlName="name" type="text" placeholder="name" >
+      </div>
+      <div class="form-group">
+        <h3>Email:</h3>
+        <input class="form-control" formControlName="email" type="text" placeholder="email" >
+      </div>
+      <div class="form-group">
+        <h3>Phone:</h3>
+        <input class="form-control" formControlName="phone" type="text" placeholder="phone" >
+      </div>
+
+
+      <div class="form-group">
+        <button type="submit">save </button>
+      </div>
+    </div>
+  </div>
+
+</form>

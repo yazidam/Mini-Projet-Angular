@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeeService {
-  //employees: Employee[]=[];
+  employees: Employee[]=[];
   url: 'http://localhost:3000/employeesse/';
 
   constructor(private  http: HttpClient, private router: Router, private route: ActivatedRoute) {
@@ -86,5 +86,12 @@ export class EmployeeService {
 
     }*/
 
-
+nbre : number;
+public count(){
+  this.nbre =0;                                    //ena zetha hethi tb3a emp .ts
+  for (let i=0 ; i< this.employees.length ; i++){
+    this.nbre++;
+  }
+  return this.nbre;
+}
 }

@@ -1,5 +1,3 @@
-
-
 <html>
 <head>
   <style>
@@ -46,7 +44,7 @@
 <div class="form-group row">
   <label for="search" class="col-sm-2 col-form-label" style="text-align: right;">Search</label>
   <div class="col-sm-6">
-    <input type="text" [(ngModel)]="searchValue"  class="form-control"  id="search" />
+    <input type="text" [(ngModel)]="searchValue"   class="form-control"  id="search" />
   </div>
 </div>
 
@@ -58,9 +56,9 @@
 
 
 <div >
-  <h2> List of employees</h2>
-  <a routerLink ="employee/add/0" class="btn btn-primary">ADD</a>
-  <table  border="3" class="table"  class="text-lg-center">
+  <h2 class="d-flex justify-content-center"> list of employees</h2>
+  <!--<a routerLink ="employee/add/0" class="btn btn-primary">ADD</a>-->
+  <table  border="3"   class="table table-hover table-dark">
     <thead>
       <th>id</th>
       <th>name</th>
@@ -71,17 +69,23 @@
 
     </thead>
     <tbody>
-    <tr *ngFor="let i of employeesse | searchfilter : searchValue">
+    <tr *ngFor="let i of employeesse | searchfilter : searchValue" >
       <td>{{i.id}}</td>
       <td>{{i.name}}</td>
       <td>{{i.email}}</td>
       <td>{{i.phone}}</td>
-      <td><a [routerLink]="['employee/update',i.id]" >Edit</a></td>
-      <td><button type="submit" [routerLink]="['employee/delete',i.id]" >del</button></td>
+      <td><a [routerLink]="['employee/update',i.id]" class="btn btn-outline-info" >Edit</a></td>
+      <td><button type="submit" [routerLink]="['employee/delete',i.id]" class="btn btn-outline-danger" >del</button></td>
 
     </tr>
+
     </tbody>
+
   </table>
+  <app-fils [msg]="employeesse.nbre" ></app-fils>
 </div>
-<h1>ugugui</h1>
+
+
+
+
 

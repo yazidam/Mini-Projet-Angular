@@ -26,8 +26,8 @@ export class EditComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.paramMap.get('id');
-    this.header = this.id === 0 ? 'add emp' : 'edit emp';
+    //this.id = +this.route.snapshot.paramMap.get('id');
+    //this.header = this.id === 0 ? 'Add Employee' : 'edit emp';
 
   }
 

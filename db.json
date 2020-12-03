@@ -1,22 +1,26 @@
 {
+  "admins": [
+    {
+      "login": "1",
+      "mdp": "1"
+    },
+    {
+      "login": "2",
+      "mdp": "2"
+    }
+  ],
   "employeesse": [
     {
       "id": "171jmt0763",
-      "name": "ali",
+      "name": "aliiii",
       "email": "taleb",
       "phone": "70604051"
     },
     {
-      "id": "1",
-      "name": "1",
-      "email": "1",
-      "phone": "1"
-    },
-    {
-      "id": "x",
-      "name": "x",
-      "email": "x",
-      "phone": "x"
+      "id": "pp",
+      "name": "pp",
+      "email": "pp",
+      "phone": "pp"
     }
   ]
 }

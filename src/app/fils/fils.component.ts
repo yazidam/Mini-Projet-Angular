@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-fils',
@@ -6,8 +6,13 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./fils.component.css']
 })
 export class FilsComponent implements OnInit {
-@Input() calcul;
+  @Input() msg;
+  @Output() msgsomme = new EventEmitter<number>();
+
   constructor() { }
+ /* nbremp(): number{
+
+  }*/
 
   ngOnInit(): void {
   }

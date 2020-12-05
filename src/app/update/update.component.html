@@ -1,34 +1,43 @@
-
+<body>
 <form [formGroup]="form" (ngSubmit)="submit()">
   <div class="container">
     <div class="col-12">
       <div class="form-group text-center">
-        <br><h5>modifier employe</h5>
+        <br><h5>modify employee</h5>
       </div>
 
 
       <div class="form-group">
         <h3>ID:</h3>
-        <input class="form-control" formControlName="id" type="text" placeholder="id" >
+        <input class="form-control" formControlName="id" type="text" placeholder="id">
       </div>
+      <div *ngIf="id1.invalid && id1.dirty" [ngStyle]="{color:'red'}">id is required</div>
+
       <div class="form-group">
         <h3>Name:</h3>
-        <input class="form-control" formControlName="name" type="text" placeholder="name" >
+        <input class="form-control" formControlName="name" type="text" placeholder="name" [maxLength]="8" minlength="3">
       </div>
+      <div *ngIf="name1.invalid && name1.dirty" [ngStyle]="{color:'red'}">name is required</div>
+
       <div class="form-group">
         <h3>Email:</h3>
-        <input class="form-control" formControlName="email" type="text" placeholder="email" >
+        <input class="form-control" formControlName="email" type="email" placeholder="email">
       </div>
+      <div *ngIf="email1.invalid && email1.dirty" [ngStyle]="{color:'red'}">email is required</div>
+
       <div class="form-group">
         <h3>Phone:</h3>
-        <input class="form-control" formControlName="phone" type="text" placeholder="phone" >
+        <input class="form-control" formControlName="phone" type="text" placeholder="phone">
       </div>
+      <div *ngIf="phone1.invalid && phone1.dirty" [ngStyle]="{color:'red'}"> phone  is required</div>
 
 
       <div class="form-group">
-        <button type="submit">save </button>
+        <button [disabled]="form.invalid" type="submit" class="btn btn-info mx-5 ">save</button>
+        <button [disabled]="form.invalid" type="submit" class="btn btn-light">Retour</button>
       </div>
     </div>
   </div>
 
 </form>
+</body>

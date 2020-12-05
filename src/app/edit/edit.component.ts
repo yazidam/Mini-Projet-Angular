@@ -12,7 +12,7 @@ import {EmployeeService} from '../shared/employee.service';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  id;
+  //id;
   header: string;
   form: FormGroup;
 
@@ -21,10 +21,21 @@ export class EditComponent implements OnInit {
       id: ['', Validators.required],
       name: ['', Validators.required],
       email: ['', Validators.required],
-      phone: ['', Validators.required],
+      phone: ['', Validators.required, Validators.maxLength(8), Validators.minLength(8), Validators.pattern('^[0-9]*$')],
     });
   }
-
+  get id() {
+    return this.form.get('id');
+  }
+  get name() {
+    return this.form.get('name');
+  }
+  get email() {
+    return this.form.get('email');
+  }
+  get phone() {
+    return this.form.get('phone');
+  }
   ngOnInit(): void {
     //this.id = +this.route.snapshot.paramMap.get('id');
     //this.header = this.id === 0 ? 'Add Employee' : 'edit emp';
@@ -48,5 +59,6 @@ export class EditComponent implements OnInit {
 
 
    }*/
+
 
 }

@@ -48,12 +48,13 @@ export class EmployeeService {
 
   nbre: number;
 
-  public count() {
-    this.nbre = 0;
-    for (let i = 0; i < this.employees.length; i++) {
+  public message() {
+    /*this.nbre = this.employees.length;
+    for  (let i = 0; i < this.employees.length; i++) {
       this.nbre++;
     }
-    return this.nbre;
+    return this.nbre ;*/
+    return ("you can make any change you want in your employyees")
   }
 
   //return this.employees.length;

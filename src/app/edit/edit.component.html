@@ -35,9 +35,6 @@
   <li><a href="#about">About</a></li>
 </ul>
 
-</body>
-</html>
-
 
 <h2 class="d-flex justify-content-center"> Add Employee</h2>
 <!--<div>
@@ -51,31 +48,45 @@
 </div>
   </form>
 </div>-->
-<form [formGroup]="form"  (ngSubmit)="empl.sumbit(form.value) " #f="ngForm">
+<form [formGroup]="form" (ngSubmit)="empl.sumbit(form.value) " #f="ngForm">
   <div class="container">
-  <div>
-    <label>id</label>
-    <input type="text" class="form-control" formControlName="id" ngModel name="id">
-  </div>
+    <div>
+      <label>id</label>
+      <input type="text" required class="form-control" formControlName="id" ngModel name="id">
 
-  <div>
-    <label>Name</label>
-    <input type="text" class="form-control" formControlName="name" ngModel name="name">
-  </div>
+      <span>You must enter a id</span>
+    </div>
 
-  <div>
-    <label>Email</label>
-    <input type="text" class="form-control" formControlName="email" ngModel name="email">
-  </div>
+    <div>
+      <label>Name</label>
+      <input type="text" required class="form-control" formControlName="name" ngModel name="name" [maxLength]="8" minlength="3">
+      <span>You must enter a name</span>
+    </div>
 
-  <div>
-    <label>Phone</label>
-    <input type="text" class="form-control" formControlName="phone" ngModel name="phone">
-  </div>
 
-  <div>
 
-    <button [disabled]="form.invalid" type="submit" class="btn btn-outline-info my-3 ">save</button>
-  </div>
+
+    <div>
+      <label>Email</label>
+
+      <input type="email"  pattern=".+@gmail.com"   pattern=".+@esprit.tn" required class="form-control" formControlName="email" ngModel name="email">
+      <span>You must enter a Email</span>
+    </div>
+
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="text" class="form-control" formControlName="phone" ngModel name="phone" [ngModel] required
+             [maxLength]="8" minlength="8" pattern="^[1-9][0-9]*$">
+      <span>You must enter a phone</span>
+    </div>
+
+
+
+    <div>
+
+      <button [disabled]="form.invalid" type="submit" class="btn btn-outline-info my-3 ">save</button>
+    </div>
   </div>
 </form>
+</body>
+</html>

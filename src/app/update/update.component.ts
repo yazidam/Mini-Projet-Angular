@@ -23,6 +23,18 @@ export class UpdateComponent implements OnInit {
 
 
   }
+  get id1() {
+    return this.form.get('id');
+  }
+  get name1() {
+    return this.form.get('name');
+  }
+  get email1() {
+    return this.form.get('email');
+  }
+  get phone1() {
+    return this.form.get('phone');
+  }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');

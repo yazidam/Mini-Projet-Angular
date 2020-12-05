@@ -1,0 +1,29 @@
+body{
+
+
+  background-color: #b9d2de;
+  height: 620px;
+}
+.attention{
+  color: orangered;
+}
+input:focus:invalid {
+
+  border-color: #FF0000;
+  background-image: none;
+  -moz-box-shadow: #d45252;
+  -webkit-box-shadow:#d45252 ;
+
+}
+span{ display: none;}
+input:focus:valid{
+  border-color: #56c93f;
+  background-image: none;
+  -moz-box-shadow: #56c93f;
+  -webkit-box-shadow:#56c93f ;
+
+}
+input:focus:invalid + span{
+  display: block;
+  color: #FF0000;
+}

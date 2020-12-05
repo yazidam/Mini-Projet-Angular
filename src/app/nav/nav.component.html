@@ -1,18 +1,25 @@
 <!DOCTYPE html>
+<body style="background-color: #0d2b41; height: 720px; color: azure;">
+<div class="container  my-5  ">
+  <div >
 
-<div >
+    <label for="exampleInputlogin">LOGIN</label>
+    <input type="text" [(ngModel)]="log" class="form-control  " id="exampleInputlogin" aria-describedby="loginHelp"
+           placeholder="Enter Login">
+  </div>
 
-  <label for="exampleInputEmail1">LOGIN</label>
-  <input type="text" [(ngModel)]="log" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Login">
+  <div>
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" [(ngModel)]="mdp" class="form-control " id="exampleInputPassword1"
+           placeholder="Enter Password">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <div style="padding-left: 4%">
+    <button type="submit" (click)="login(log,mdp)" class="btn btn-outline-primary my-2 mx-2  ">Se Conecter</button>
+  </div>
+
 </div>
-<div >
-  <label for="exampleInputPassword1">Password</label>
-  <input type="password" [(ngModel)]="mdp" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
-</div>
-<div class="form-check">
-  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-</div>
-<button type="submit" (click)="login(log,mdp)"  class="btn btn-outline-primary">Se Conecter</button>
-
-
+</body>

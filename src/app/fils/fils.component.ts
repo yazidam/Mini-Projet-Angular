@@ -7,7 +7,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class FilsComponent implements OnInit {
   @Input() msg;
-  @Output() msgsomme = new EventEmitter<number>();
+ // @Output() msgsomme = new EventEmitter<number>();
 
   constructor() { }
  /* nbremp(): number{

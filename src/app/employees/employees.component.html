@@ -29,10 +29,12 @@
 <body>
 
 <ul>
-  <li><a class="active" routerLink="list">Home</a></li>
+  <li><a class="active" routerLink='list'>Home</a></li>
   <li><a routerLink="employee/add/0">News</a></li>
   <li><a href="#contact">Contact</a></li>
   <li><a href="#about">About</a></li>
+<li><a routerLink=''>Exit</a></li>
+
 </ul>
 
 </body>
@@ -82,7 +84,7 @@
     </tbody>
 
   </table>
-  <app-fils [msg]="employeesse.nbre" ></app-fils>
+  <app-fils [msg]="employeeService.count()" ></app-fils>
 </div>
 
 

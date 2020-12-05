@@ -8,13 +8,13 @@ import {Employee} from '../model/employee';
   styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit {
-// employees: Employee[];
+
   db: Employee[];
   searchValue: string;
-  // emp;
+
   employeesse: any;
 
-  constructor(private employeeService: EmployeeService) {
+  constructor(public employeeService: EmployeeService) {
   }
 
 
@@ -32,9 +32,6 @@ export class EmployeesComponent implements OnInit {
 
   }
 
-  /*onDelete(id: number){
-    this.employeeService.onDelete(id);
 
-  }*/
 
 }

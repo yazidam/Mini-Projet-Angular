@@ -8,7 +8,7 @@ import {Employee} from '../model/employee';
   styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit {
-
+  pg: number = 1;
   db: Employee[];
   searchValue: string;
 
@@ -31,7 +31,6 @@ export class EmployeesComponent implements OnInit {
     );
 
   }
-
 
 
 }

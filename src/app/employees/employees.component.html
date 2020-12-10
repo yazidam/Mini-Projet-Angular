@@ -74,7 +74,7 @@
 
     </thead>
     <tbody>
-    <tr *ngFor="let i of employeesse | searchfilter : searchValue" >
+    <tr *ngFor="let i of employeesse | searchfilter : searchValue |paginate: {itemsPerPage:3,currentPage:pg}" >
       <td>{{i.id}}</td>
       <td>{{i.name}}</td>
       <td>{{i.email}}</td>
@@ -87,7 +87,7 @@
     </tbody>
 
   </table>
-
+  <pagination-controls (pageChange)="pg = $event"></pagination-controls>
 </div>
 
 

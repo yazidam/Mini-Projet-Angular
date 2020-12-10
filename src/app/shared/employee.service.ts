@@ -10,7 +10,7 @@ import {Admins} from '../model/admins';
   providedIn: 'root'
 })
 export class EmployeeService {
-  employees: Employee[] = [];
+  employees: Employee[] ;
 
   url: 'http://localhost:3000/employeesse/';
 
@@ -18,7 +18,7 @@ export class EmployeeService {
   }
 
   onGet() {
-    return this.http.get('http://localhost:3000/employeesse/');
+    return this.http.get<Employee[]>('http://localhost:3000/employeesse/');
   }
 
   addemp(data: any): Observable<any> {
@@ -48,16 +48,34 @@ export class EmployeeService {
 
   nbre: number;
 
-  public message() {
-    /*this.nbre = this.employees.length;
+  public nbr() {
+    this.nbre = 0;
     for  (let i = 0; i < this.employees.length; i++) {
       this.nbre++;
     }
-    return this.nbre ;*/
-    return ("you can make any change you want in your employyees")
+    return this.nbre ;
+  //  return ("you can make any change you want in your employyees")
+
   }
 
   //return this.employees.length;
 
+delet(id){
+  this.deleteemp(id)
+.subscribe(data => this.router.navigate(['list']));
+}
+
+getemp(){
+  this.onGet().subscribe(
+    (data) => {
+      this.employees = data;
+      console.log(this.employees);
+    },
+    errors => {
+      console.log(errors);
+      alert(errors.status);
+    },
+  );
+}
 
 }

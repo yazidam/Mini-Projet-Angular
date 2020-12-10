@@ -19,7 +19,9 @@ export class EmployeesComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.employeeService.onGet().subscribe(
+    this.employeeService.getemp();
+
+   /* this.employeeService.onGet().subscribe(
       (data) => {
         this.employeesse = data;
         console.log(this.employeesse);
@@ -28,7 +30,7 @@ export class EmployeesComponent implements OnInit {
         console.log(errors);
         alert(errors.status);
       },
-    );
+    );*/
 
   }
 

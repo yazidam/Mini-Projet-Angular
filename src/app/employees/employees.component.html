@@ -32,9 +32,7 @@
 <ul>
   <li><a class="active" routerLink='list'>Home</a></li>
   <li><a routerLink="employee/add/0">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
-<li><a routerLink=''>Exit</a></li>
+  <li><a routerLink=''>logout</a></li>
 
 </ul>
 
@@ -60,7 +58,7 @@
 <div >
   <h2 class="d-flex justify-content-center my-4" style="color: #b79b9b"> list of employees</h2>
   <!--<a routerLink ="employee/add/0" class="btn btn-primary">ADD</a>-->
-  <app-fils [msg]="employeeService.message()" class="my-3" ></app-fils>
+  <app-fils [msg]="employeeService.nbr()" class="my-3" ></app-fils>
 
   <table  border="3"   class="table table-hover table-dark my-5">
 
@@ -74,20 +72,20 @@
 
     </thead>
     <tbody>
-    <tr *ngFor="let i of employeesse | searchfilter : searchValue |paginate: {itemsPerPage:3,currentPage:pg}" >
+    <tr *ngFor="let i of employeeService.employees | searchfilter : searchValue |paginate: {itemsPerPage:3,currentPage:pg}" >
       <td>{{i.id}}</td>
       <td>{{i.name}}</td>
       <td>{{i.email}}</td>
       <td>{{i.phone}}</td>
       <td><a [routerLink]="['employee/update',i.id]" class="btn btn-outline-info" >Edit</a></td>
-      <td><button type="submit" [routerLink]="['employee/delete',i.id]" class="btn btn-outline-danger" >del</button></td>
+      <td><button type="submit" (click)="employeeService.delet(i.id)" [routerLink]="['employee/delete',i.id]" class="btn btn-outline-danger" >del</button></td>
 
     </tr>
 
     </tbody>
 
   </table>
-  <pagination-controls (pageChange)="pg = $event"></pagination-controls>
+  <pagination-controls (pageChange)="pg = $event" class="text-center"></pagination-controls>
 </div>
 
 

@@ -9,10 +9,13 @@ import {Admins} from '../model/admins';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-listadmin: Admins[];
+  listadmin: Admins[];
+
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private  http: HttpClient) {
     this.http.get<Admins[]>('http://localhost:3000/admins/').subscribe(
-      (data) => {this.listadmin = data;}
+      (data) => {
+        this.listadmin = data;
+      }
     );
   }
 
@@ -30,10 +33,12 @@ listadmin: Admins[];
 
     }
     if (this.test === false) {
-      alert('vérifier vos paramètre');
+      alert('check your settings');
     }
 
   }
+
+
 
   /*login(log, mdp) {
     if ((mdp === 'admin') && (log === 'admin')) {

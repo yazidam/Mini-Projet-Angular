@@ -36,17 +36,6 @@
 
 
 <h2 class="d-flex justify-content-center"> Add Employee</h2>
-<!--<div>
-  <form [formGroup]= "form" >
-    <div >id :<input formControlName="id" ></div>
-    <div >name :<input formControlName="name" ></div>
-    <div >email :<input formControlName="email" ></div>
-    <div >phone :<input formControlName="phone" ></div>
-<div>
-  <button type="submit">save </button>
-</div>
-  </form>
-</div>-->
 <form [formGroup]="form" (ngSubmit)="empl.sumbit(form.value) " #f="ngForm">
   <div class="container">
     <div>
@@ -68,7 +57,7 @@
     <div>
       <label>Email</label>
 
-      <input type="email"  pattern=".+@gmail.com"   pattern=".+@esprit.tn" required class="form-control" formControlName="email" ngModel name="email">
+      <input type="email"  pattern=".+@gmail.com"   required class="form-control" formControlName="email" ngModel name="email">
       <span>You must enter a Email</span>
     </div>
 

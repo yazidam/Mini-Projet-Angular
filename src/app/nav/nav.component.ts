@@ -39,15 +39,6 @@ export class NavComponent implements OnInit {
   }
 
 
-
-  /*login(log, mdp) {
-    if ((mdp === 'admin') && (log === 'admin')) {
-      this.router.navigate(['list']);
-    } else {
-      alert('verifier votre parametre');
-    }
-  }*/
-
   ngOnInit(): void {
   }
 

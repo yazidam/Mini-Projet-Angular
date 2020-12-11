@@ -49,17 +49,13 @@
 </div>
 
 
-<!--<label>recherche</label>
-<input type="text" [(ngModel)]="searchValue" >-->
-
 
 
 
 <div >
   <h2 class="d-flex justify-content-center my-4" style="color: #b79b9b"> list of employees</h2>
-  <!--<a routerLink ="employee/add/0" class="btn btn-primary">ADD</a>-->
-  <app-fils [msg]="employeeService.nbr()" class="my-3" ></app-fils>
 
+  <div *ngIf="employeeService.affiche==true" class="modifcol text-center">your company can have 300 employees, but the The proportion of employees : {{employeeService.y}} %</div>
   <table  border="3"   class="table table-hover table-dark my-5">
 
     <thead>
@@ -85,6 +81,7 @@
     </tbody>
 
   </table>
+  <app-fils [msg]="employeeService.nbr()" (msgcal)="employeeService.aff($event)" class="my-3" ></app-fils>
   <pagination-controls (pageChange)="pg = $event" class="text-center"></pagination-controls>
 </div>
 

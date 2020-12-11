@@ -8,14 +8,13 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./delete.component.css']
 })
 export class DeleteComponent implements OnInit {
-id;
+  id;
+
   constructor(private del: EmployeeService, private router: Router, private activateRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-  /*  this.del.deleteemp(
-      this.activateRoute.snapshot.params['id'])
-      .subscribe(data => this.router.navigate(['list']));*/
+
     this.id = this.activateRoute.snapshot.params['id'];
 
   }

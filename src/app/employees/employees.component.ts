@@ -10,7 +10,6 @@ import {Employee} from '../model/employee';
 export class EmployeesComponent implements OnInit {
   pg: number = 1;
   db: Employee[];
-  searchValue: string;
 
   employeesse: any;
 

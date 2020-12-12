@@ -10,7 +10,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { EditComponent } from './edit/edit.component';
 import { DeleteComponent } from './delete/delete.component';
 import { UpdateComponent } from './update/update.component';
-import { SearchfilterPipe } from './searchfilter.pipe';
 import { FilsComponent } from './fils/fils.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 
@@ -23,7 +22,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     EditComponent,
     DeleteComponent,
     UpdateComponent,
-    SearchfilterPipe,
     FilsComponent
   ],
   imports: [

@@ -41,19 +41,45 @@
 
 
 <div class="form-group row"></div>
-<div class="form-group row">
-  <label for="search" class="col-sm-2 col-form-label" style="text-align: right;">Search</label>
-  <div class="col-sm-6">
-    <input type="text" [(ngModel)]="searchValue"   class="form-control my-2 w-50"  id="search" />
-  </div>
+
+
+<div class="d-flex align-content-around">
+  <div> <input class="form-control mr-sm-2 w-75" type="search" [(ngModel)]="employeeService.critere" placeholder="criterion" aria-label="Search">  </div>
+   <div><input class="form-control mr-sm-2  w-75" type="search" [(ngModel)]="employeeService.vall" aria-label="Search" placeholder="value"> </div>
+  <button class="btn btn-outline-light my-2 my-sm-0 mx-1 h-25" type="submit" (click)="employeeService.rechercheparcritere(employeeService.critere,employeeService.vall)">Search</button>
+
+
 </div>
+<fieldset *ngIf="employeeService.afficher" >
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">email</th>
+      <th scope="col">phone</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+
+      <td>{{employeeService.idrecherche}}</td>
+      <td>{{employeeService.namerechrche}}</td>
+      <td>{{employeeService.emailrecherche}}</td>
+      <td>{{employeeService.phonerecherche}}</td>
 
 
+    </tr>
 
+    </tbody>
+  </table>
+</fieldset>
 
 
 <div >
-  <h2 class="d-flex justify-content-center my-4" style="color: #b79b9b"> list of employees</h2>
+  <h2 class="d-flex justify-content-center my-4" > list of employees</h2>
 
   <div *ngIf="employeeService.affiche==true" class="modifcol text-center">your company can have 300 employees, but the The proportion of employees : {{employeeService.y}} %</div>
   <table  border="3"   class="table table-hover table-dark my-5">
@@ -68,7 +94,7 @@
 
     </thead>
     <tbody>
-    <tr *ngFor="let i of employeeService.employees | searchfilter : searchValue |paginate: {itemsPerPage:3,currentPage:pg}" >
+    <tr *ngFor="let i of employeeService.employees  |paginate: {itemsPerPage:3,currentPage:pg}" >
       <td>{{i.id}}</td>
       <td>{{i.name}}</td>
       <td>{{i.email}}</td>

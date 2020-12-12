@@ -27,8 +27,6 @@ export class EmployeeService {
   }
 
 
-
-
   getempbyid(id: number) {
     return this.http.get('http://localhost:3000/employeesse/' + id);
   }
@@ -54,6 +52,7 @@ export class EmployeeService {
 
 
   }
+
   sumbit(form) {
     this.addemp(form).subscribe(() => {
       this.router.navigate(['list']);
@@ -84,5 +83,48 @@ export class EmployeeService {
     this.y = value;
     return value;
   }
+
+  critere: string;
+  vall;
+  indice: number;
+  afficher = false;
+  idrecherche;
+  namerechrche;
+  emailrecherche;
+  phonerecherche;
+
+  rechercheparcritere(critere, vall) {
+    this.afficher = !this.afficher;
+    this.indice = -1;
+    for (let i = 0; i < this.employees.length; i++) {
+      if ((critere == 'id') && (this.employees[i].id == vall)) {
+        this.indice = i;
+      }
+
+      if ((critere == 'name') && (this.employees[i].name == vall)) {
+        this.indice = i;
+      }
+
+      if ((critere == 'email') && (this.employees[i].email == vall)) {
+        this.indice = i;
+      }
+
+      if ((critere == 'phone') && (this.employees[i].phone == vall)) {
+        this.indice = i;
+      }
+    }
+    console.log(this.indice);
+    if (this.indice != -1) {
+      this.idrecherche = this.employees[this.indice].id;
+      this.namerechrche = this.employees[this.indice].name;
+      this.emailrecherche = this.employees[this.indice].email;
+      this.phonerecherche = this.employees[this.indice].phone;
+
+    } else {
+      this.afficher = false;
+      alert('this client does not exist');
+    }
+  }
+
 
 }
